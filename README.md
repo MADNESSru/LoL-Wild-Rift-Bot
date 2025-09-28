@@ -83,3 +83,47 @@ I will build a custom environment using [Unity](https://unity.com/) and integrat
 3. 👣 Script basic movement and spawning logic
 4. 📤 Create observation definitions for ML input
 5. 🧠 Configure ML-Agents and start first training runs
+
+---
+
+## 🔊 Discord Voice Assistant Bot
+
+This repository now also contains a Discord bot capable of joining a voice channel, listening to what you say, transcribing it with OpenAI Whisper, generating a reply with GPT, and speaking the answer back using OpenAI TTS.
+
+### ⚙️ Prerequisites
+
+- Python 3.9+
+- `ffmpeg` installed and available on your `PATH`
+- Discord bot token with the necessary privileged intents enabled
+- OpenAI API key with access to GPT-4o models and the speech endpoints
+
+### 🚀 Setup
+
+1. Install Python dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Create a `.env` file based on the provided example:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Fill in your `DISCORD_TOKEN` and `OPENAI_API_KEY` values.
+
+3. Run the bot:
+
+   ```bash
+   python -m bot.main
+   ```
+
+### 🕹️ Usage
+
+- Invite the bot to your server and ensure it has permission to join and speak in voice channels.
+- Type `!join` in any text channel while connected to a voice channel.
+- Speak normally; after 2-3 seconds of silence the bot will transcribe your message, respond in text, and synthesize an audible reply.
+- Use `!reset` to clear the conversation history without leaving the call.
+- Use `!leave` to disconnect the bot from the voice channel.
+
